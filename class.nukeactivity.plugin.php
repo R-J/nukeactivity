@@ -8,6 +8,17 @@ class NukeActivityPlugin extends Gdn_Plugin {
      */
     public function setup() {
         saveToConfig('Garden.Profile.ShowActivities', false);
+
+        $roles = RoleModel::roles();
+        $permissionModel = new PermissionModel();
+        foreach ($roles as $roleID => $role) {
+            $permissionModel->save(
+                [
+                    'RoleID' => $roleID,
+                    'Garden.Activity.View' => 0
+                ]
+            );
+        }
     }
 
     /**
@@ -17,6 +28,17 @@ class NukeActivityPlugin extends Gdn_Plugin {
      */
     public function onDisable() {
         saveToConfig('Garden.Profile.ShowActivities', true);
+
+        $roles = RoleModel::roles();
+        $permissionModel = new PermissionModel();
+        foreach ($roles as $roleID => $role) {
+            $permissionModel->save(
+                [
+                    'RoleID' => $roleID,
+                    'Garden.Activity.View' => 1
+                ]
+            );
+        }
     }
 
     /**
@@ -27,6 +49,7 @@ class NukeActivityPlugin extends Gdn_Plugin {
      * @return void.
      */
     public function gdn_smarty_init_handler($sender) {
+return;
         $sender->unregister_function('activity_link');
         $sender->register_function('activity_link', 'empty_activity_link');
     }
@@ -40,6 +63,7 @@ class NukeActivityPlugin extends Gdn_Plugin {
      * @return void.
      */
     public function activityController_render_before($sender, $args) {
+return;
         if ($sender->Request->getMethod() != 'GET') {
             return;
         }
@@ -51,6 +75,10 @@ class NukeActivityPlugin extends Gdn_Plugin {
             redirectTo($route['Destination']);
         }
     }
+
+    public function base_beforeDiscussionFilters_handler($sender) {
+        echo '<style></style>';
+    }
 }
 
 /**
@@ -61,6 +89,8 @@ class NukeActivityPlugin extends Gdn_Plugin {
  *
  * @return string Empty string to prevent showing a link.
  */
+/*
 function empty_activity_link($params, &$smarty) {
       return '';
 }
+*/

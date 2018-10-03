@@ -1,14 +1,14 @@
 {
     "name": "Nuke Activity",
-    "description": "This plugin whipes every visual sign of the Activity feature away. It doesn't touch the database, though.",
-    "version": "0.1.0",
+    "description": "This plugin whipes every visual sign of the Activity feature away. See README.md for more info!",
+    "version": "0.2.0",
     "license": "MIT",
     "type": "addon",
     "key": "nukeactivity",
     "mobileFriendly": true,
     "hasLocale": true,
-    "settingsUrl": "/settings/nukeactivity",
     "pluginUrl": "https://github.com/r-j/nukeactivity",
+    "documentationUrl": "https://github.com/r-j/nukeactivity/README.md",
     "authors": [
         {
             "name": "Robin Jurinka",
