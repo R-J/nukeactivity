@@ -1,4 +1,4 @@
-# Nuke Activity
+# Nuke Activity for Vanilla Forums
 
 This plugin whipes every visual sign of the Activity feature away. 
 

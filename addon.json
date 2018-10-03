@@ -1,6 +1,6 @@
 {
     "name": "Nuke Activity",
-    "description": "This plugin whipes every visual sign of the Activity feature away. See README.md for more info!",
+    "description": "This plugin whipes every visual sign of the Activity feature away. <strong>See README.md for more info!</strong>",
     "version": "0.2.0",
     "license": "MIT",
     "type": "addon",
